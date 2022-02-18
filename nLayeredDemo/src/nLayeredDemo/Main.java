@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		//test
-		//Spring IoC kullanýlacak
+		//Spring IoC will be used
 		
 		ProductService productService = new ProductManager(new AbcProductDao());
 		
