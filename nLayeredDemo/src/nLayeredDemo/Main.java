@@ -2,8 +2,8 @@ package nLayeredDemo;
 
 import nLayeredDemo.business.abstracts.ProductService;
 import nLayeredDemo.business.concretes.ProductManager;
+import nLayeredDemo.core.JLoggerManagerAdapter;
 import nLayeredDemo.dataAccess.concretes.AbcProductDao;
-import nLayeredDemo.dataAccess.concretes.HibernateProductDao;
 import nLayeredDemo.entities.concretes.Product;
 
 public class Main {
@@ -13,7 +13,7 @@ public class Main {
 		//test
 		//Spring IoC will be used
 		
-		ProductService productService = new ProductManager(new AbcProductDao());
+		ProductService productService = new ProductManager(new AbcProductDao(), new JLoggerManagerAdapter());
 		
 		Product product = new Product(1,2,"Notebook", 20, 60);
 		productService.add(product);
